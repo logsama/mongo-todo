@@ -9,7 +9,7 @@ var http = require('http');
 var path = require('path');
 var todoModel = require('./models/todo');
 var todoRoute = require('./routes/todo');
-//var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 //var methodOverride = require('method-override');
@@ -20,7 +20,7 @@ var app = express();
 //app.configure(function(){
 app.set('port', process.env.PORT || 3000);
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
