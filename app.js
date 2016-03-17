@@ -102,6 +102,11 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
+app.get('/', function(req,res) {
+  console.log('fuck off');
+  res.sendFile('/public/index.html');
+});
+
 app.get('/todo',todoRoute.index);
 app.get('/todo/:id',todoRoute.findById);
 app.put('/todo/:id',todoRoute.update);
