@@ -104,7 +104,7 @@ db.once('open', function callback () {
 
 app.get('/', function(req,res) {
   console.log('fuck off');
-  res.sendFile(path.join(process.env.PWD, 'public','index.html'));
+  //res.sendFile(path.join(process.env.PWD, 'public','index.html'));
 });
 
 app.get('/todo',todoRoute.index);
