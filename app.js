@@ -24,6 +24,7 @@ app.use(logger('dev'));
 app.use(express.static(path.join(process.env.PWD, 'public'))); //was __dirname
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(app.router);
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -107,9 +108,6 @@ app.get('/todo/:id',todoRoute.findById);
 app.put('/todo/:id',todoRoute.update);
 app.delete('/todo/:id',todoRoute.delete)
 app.post('/todo',todoRoute.newTodo);
-app.get('/',function(request,response) {
-  response.sendFile("index.html");
-});
 
 
 http.createServer(app).listen(app.get('port'), function(){
