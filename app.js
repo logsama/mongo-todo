@@ -21,10 +21,9 @@ var app = express();
 //app.configure(function(){
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
-app.use(express.static(path.join(process.env.PWD, 'public'))); //was __dirname
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(app.router);
+app.use(express.static(path.join(process.env.PWD, 'public'))); //was __dirname
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(favicon(__dirname + '/public/favicon.ico'));
