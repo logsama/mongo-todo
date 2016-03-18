@@ -23,7 +23,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public'))); //was 
+app.use(express.static(path.join(__dirname, '/public'))); //was 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -103,7 +103,7 @@ db.once('open', function callback () {
 });
 
 app.get('/', function(req,res) {
-  res.sendFile('/index.html');
+  res.sendFile(path.join(__dirname, '/public','/index.html');
 });
 
 app.get('/todo',todoRoute.index);
