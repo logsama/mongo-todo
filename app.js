@@ -13,7 +13,7 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 //var methodOverride = require('method-override');
-//process.env.PWD = process.cwd()
+process.env.PWD = process.cwd()
 
 var app = express();
 
@@ -103,7 +103,7 @@ db.once('open', function callback () {
 });
 
 app.get('/', function(req,res) {
-  res.sendFile(path.join(__dirname, '../public','index.html'));
+  res.sendFile(path.join(__dirname, 'public','index.html'));
 });
 
 app.get('/todo',todoRoute.index);
