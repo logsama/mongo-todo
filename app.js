@@ -103,7 +103,7 @@ db.once('open', function callback () {
 });
 
 app.get('/', function(req,res) {
-  console.log('fuck off');
+  console.log(process.env.PWD);
   //res.sendFile(path.join(process.env.PWD, 'public','index.html'));
   res.send('Todo home page');
 });
