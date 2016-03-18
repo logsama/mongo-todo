@@ -103,7 +103,8 @@ db.once('open', function callback () {
 });
 
 app.get('/', function(req,res) {
-  console.log(process.env.PWD);
+  console.log("pwd=" + process.env.PWD);
+  console.log("dir=" + __dirname);
   //res.sendFile(path.join(process.env.PWD, 'public','index.html'));
   res.send('Todo home page');
 });
