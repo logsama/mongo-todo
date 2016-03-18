@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public'))); //was 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(favicon(__dirname + '/public/favicon.ico'));
  //app.use(methodOverride);
   //app.use(express.favicon());
@@ -102,14 +102,9 @@ db.once('open', function callback () {
    console.log('Successfully mongodb is connected');
 });
 
-/*
 app.get('/', function(req,res) {
-  console.log("pwd=" + process.env.PWD);
-  console.log("dir=" + __dirname);
-  //res.sendFile(path.join(process.env.PWD, 'public','index.html'));
-  res.send('Todo home page');
+  res.sendFile('index.html');
 });
-*/
 
 app.get('/todo',todoRoute.index);
 app.get('/todo/:id',todoRoute.findById);
